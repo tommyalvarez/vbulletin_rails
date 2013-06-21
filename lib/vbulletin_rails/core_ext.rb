@@ -191,6 +191,11 @@ module ActionController #:nodoc:
       end
     end
 
+    # Checks if the user is logued in the forum
+    def vbulletin_user_signed_in?
+      !current_vbulletin_user.nil?
+    end
+
     # If your application uses "Remember me" variation, this method takes care for VBulletin and sets remember me cookie as well.
     # It takes VBulletinRails::User instance as parameter.
     # It also sets <tt>session[:vbulletin_permanent]</tt> to <tt>true</tt> which can be checked in your application if needed.
