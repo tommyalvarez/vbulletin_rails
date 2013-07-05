@@ -14,8 +14,5 @@ module VBulletinRails
       set_table_name(PREFIX + 'pmtext')
     end
 
-    has_many :pms, :foreign_key => :pmtextid, :dependent => :delete_all
-    has_many :users, :through => :pms, :source => :user
-
   end
 end
