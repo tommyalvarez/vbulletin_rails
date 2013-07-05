@@ -292,7 +292,7 @@ ActiveRecord::SchemaDumper.ignore_tables += ['access', 'action', 'ad', 'adcriter
                                              'hvquestion', 'icon', 'imagecategory', 'imagecategorypermission', 'indexqueue', 'infraction', 'infractionban',
                                              'infractiongroup', 'infractionlevel', 'language', 'mailqueue', 'moderation', 'moderator', 'moderatorlog', 'notice',
                                              'noticecriteria', 'noticedismissed', 'package', 'passwordhistory', 'paymentapi', 'paymentinfo', 'paymenttransaction',
-                                             'phrase', 'phrasetype', 'picturecomment', 'picturecomment_hash', 'picturelegacy', 'plugin', 'pm', 'pmreceipt', 'pmtext',
+                                             'phrase', 'phrasetype', 'picturecomment', 'picturecomment_hash', 'picturelegacy', 'plugin', 'pmreceipt',
                                              'pmthrottle', 'podcast', 'podcastitem', 'poll', 'pollvote', 'post', 'postedithistory', 'posthash', 'postlog',
                                              'postparsed', 'prefix', 'prefixpermission', 'prefixset', 'product', 'productcode', 'productdependency',
                                              'profileblockprivacy', 'profilefield', 'profilefieldcategory', 'profilevisitor', 'ranks', 'reminder', 'reputation',
