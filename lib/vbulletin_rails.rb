@@ -5,8 +5,6 @@ require 'vbulletin_rails/models/user'
 require 'vbulletin_rails/models/userfield'
 require 'vbulletin_rails/models/usertextfield'
 require 'vbulletin_rails/models/session'
-require 'vbulletin_rails/models/pm'
-require 'vbulletin_rails/models/pmtext'
 
 # This gem adds full support of PHP VBulletin forum in Rails application
 #

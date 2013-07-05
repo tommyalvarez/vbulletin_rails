@@ -23,8 +23,6 @@ module VBulletinRails
     has_one :userfield, :foreign_key => :userid, :dependent => :delete
     has_one :usertextfield, :foreign_key => :userid, :dependent => :delete
     has_many :session, :foreign_key => :userid
-    has_many :pms, :foreign_key => :userid
-    has_many :pmtexts, :through => :pms
 
     after_initialize :defaults
 
