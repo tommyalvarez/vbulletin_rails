@@ -15,8 +15,8 @@ module VBulletinRails
     end
 
 
-    belongs_to :user
-    belongs_to :pmtext
+    belongs_to :user, :foreign_key => :userid
+    belongs_to :pmtext, :foreign_key => :pmtextid
 
 
   end
