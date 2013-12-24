@@ -24,7 +24,7 @@ module VBulletinRails
     has_one :userfield, :foreign_key => :userid, :dependent => :delete
     has_one :usertextfield, :foreign_key => :userid, :dependent => :delete
     has_many :session, :foreign_key => :userid
-    has_many :relations, class_name: "Userlist", foreign_key: :userid
+    has_many :relations, class_name: "Userlist", foreign_key: :userid, conditions: {type: "buddy", friend: "yes"}
     has_many :relation_users, through: :relations, class_name: "User", foreign_key: :relationid
 
     after_initialize :defaults
