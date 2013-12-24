@@ -13,6 +13,9 @@ module VBulletinRails
       set_table_name(PREFIX + 'userlist')
     end
 
+    # Userlist has type column, confusing rails for STI model, so we disabled it
+    self.inheritance_column = nil
+
     attr_accessible :userid, :relationid, :type, :friend
     validates_presence_of :userid, :relationid, :type, :friend
     validates_uniqueness_of :userid, scope: :relationid
