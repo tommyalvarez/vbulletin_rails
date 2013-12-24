@@ -15,11 +15,12 @@ module VBulletinRails
       set_table_name(PREFIX + 'user')
     end
 
-    attr_accessible :email, :password, :username,  :lastactivity, :lastvisit
+    attr_accessible :email, :password, :username,  :lastactivity, :lastvisit, :avatarid, :avatarrevision
     validates_presence_of :email, :password
     validates_uniqueness_of :email
     validates_format_of :email, :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
 
+    belongs_to :avatar, foreign_key: :avatarid
     has_one :userfield, :foreign_key => :userid, :dependent => :delete
     has_one :usertextfield, :foreign_key => :userid, :dependent => :delete
     has_many :session, :foreign_key => :userid
@@ -82,6 +83,17 @@ module VBulletinRails
       else
         return vb_user
       end
+    end
+
+    def get_avatar
+      my_avatar = nil
+      
+      if avatarid == 0
+        my_avatar =  "http://www.nightclubber.com.ar/foro/customavatars/thumbs/avatar#{self.userid}_#{self.avatarrevision}.gif" 
+      else
+        my_avatar = self.avatar.avatarpath
+      end
+
     end
 
     private
