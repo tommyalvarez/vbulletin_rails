@@ -91,7 +91,7 @@ module VBulletinRails
       if avatarid == 0
         my_avatar =  "http://www.nightclubber.com.ar/foro/customavatars/thumbs/avatar#{self.userid}_#{self.avatarrevision}.gif" 
       else
-        my_avatar = self.avatar.avatarpath
+        my_avatar = "http://www.nightclubber.com.ar/foro/#{self.avatar.avatarpath}"
       end
 
     end
