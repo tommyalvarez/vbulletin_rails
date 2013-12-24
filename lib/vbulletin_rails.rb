@@ -6,6 +6,7 @@ require 'vbulletin_rails/models/userfield'
 require 'vbulletin_rails/models/usertextfield'
 require 'vbulletin_rails/models/session'
 require 'vbulletin_rails/models/avatar'
+require 'vbulletin_rails/models/userlist'
 
 # This gem adds full support of PHP VBulletin forum in Rails application
 #
@@ -96,6 +97,7 @@ module VBulletinRails
     VBulletinRails::Pm.delete_all
     VBulletinRails::Pmtext.delete_all
     VBulletinRails::Avatar.delete_all
+    VBulletinRails::Userlist.delete_all
   end
 
 end
