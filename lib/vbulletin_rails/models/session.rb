@@ -22,6 +22,11 @@ module VBulletinRails
 
     belongs_to :user, :foreign_key => :userid
 
+    # Scopes
+    scope :registered_user, where("userid <> ?", 0)
+    scope :online,  where("lastactivity > ?", DateTime.now - 15.minutes)
+    scope :by_ids, lambda {|user_ids| where("userid in (?)", user_ids) unless user_ids.blank?}
+
     # Updates VBulletin session timestamp on the application side, to make them consistent with VBulletin on the forum side.
     def update_timestamps
       unless user.blank?
