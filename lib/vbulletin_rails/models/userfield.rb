@@ -14,9 +14,9 @@ module VBulletinRails
     attr_accessible :field2, :field7, :field32
 
     # Aliases
-    alias :field2 :location
-    alias :field7 :first_name
-    alias :field32 :last_name
+    alias :location :field2
+    alias :first_name :field7
+    alias :last_name :field32
 
     belongs_to :user, :foreign_key => :userid
   end
