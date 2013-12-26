@@ -11,6 +11,13 @@ module VBulletinRails
       set_table_name(PREFIX + 'userfield')
     end
 
+    attr_accessible :field2, :field7, :field32
+
+    # Aliases
+    alias :field2, :location
+    alias :field7, :first_name
+    alias :field32, :last_name
+
     belongs_to :user, :foreign_key => :userid
   end
 end
