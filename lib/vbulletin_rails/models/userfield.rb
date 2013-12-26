@@ -13,10 +13,11 @@ module VBulletinRails
 
     attr_accessible :field2, :field7, :field32
 
-    # Aliases
-    alias :location :field2
-    alias :first_name :field7
-    alias :last_name :field32
+    
+    # For human# Aliases
+    #alias :location :field2
+    #alias :first_name :field7
+    #alias :last_name :field32
 
     belongs_to :user, :foreign_key => :userid
   end
