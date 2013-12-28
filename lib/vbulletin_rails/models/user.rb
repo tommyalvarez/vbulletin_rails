@@ -92,7 +92,7 @@ module VBulletinRails
     def get_avatar
       my_avatar = nil
       
-      if avatarid == 0
+      if avatarid == 0 && avatarrevision != 0
         my_avatar =  "http://www.nightclubber.com.ar/foro/customavatars/thumbs/avatar#{self.userid}_#{self.avatarrevision}.gif" 
       else
         if avatarrevision == 0
