@@ -16,7 +16,7 @@ module VBulletinRails
     end
 
     attr_accessible :email, :password, :username,  :lastactivity, :lastvisit, :avatarid, :avatarrevision
-    attr_accessible :usertitle
+    attr_accessible :usertitle, :joindate
 
     validates_presence_of :email, :password
     validates_uniqueness_of :email
@@ -95,7 +95,11 @@ module VBulletinRails
       if avatarid == 0
         my_avatar =  "http://www.nightclubber.com.ar/foro/customavatars/thumbs/avatar#{self.userid}_#{self.avatarrevision}.gif" 
       else
-        my_avatar = "http://www.nightclubber.com.ar/foro/#{self.avatar.avatarpath}"
+        if avatarrevision == 0
+          my_avatar = "http://www.nightclubber.com.ar/foro/images/ncstyle/misc/unknown.gif"
+        else
+          my_avatar = "http://www.nightclubber.com.ar/foro/#{self.avatar.avatarpath}"
+        end
       end
 
     end
