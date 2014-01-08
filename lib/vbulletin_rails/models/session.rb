@@ -25,7 +25,7 @@ module VBulletinRails
 
     # Scopes
     scope :registered_user, where("userid <> ?", 0)
-    scope :online,  where("lastactivity > ?", (DateTime.now - 16.minutes).to_i)
+    scope :online,  where("userid <> 0 and loggedin = 2 or userid = 0 and loggedin = 0 and lastactivity > ?", (DateTime.now - 15.minutes).to_i)
     scope :by_ids, lambda {|user_ids| user_ids.present?? where("userid in (?)", user_ids) : where("1 = 0")}
     scope :except_ids, lambda {|user_ids| where("userid NOT in (?)", user_ids) unless user_ids.blank?}
 
