@@ -1,3 +1,4 @@
+require 'date'
 module VBulletinRails
 
   # Automatic class for handling VBulletin users sessions.
@@ -24,8 +25,9 @@ module VBulletinRails
 
     # Scopes
     scope :registered_user, where("userid <> ?", 0)
-    scope :online,  where("lastactivity > ?", DateTime.now - 15.minutes)
+    scope :online,  where("lastactivity > ?", (DateTime.now - 15.minutes).to_time.to_i)
     scope :by_ids, lambda {|user_ids| where("userid in (?)", user_ids) unless user_ids.blank?}
+    scope :except_ids, lambda {|user_ids| where("userid NOT in (?)", user_ids) unless user_ids.blank?}
 
     # Updates VBulletin session timestamp on the application side, to make them consistent with VBulletin on the forum side.
     def update_timestamps
