@@ -11,7 +11,7 @@ module VBulletinRails
       set_table_name(PREFIX + 'userfield')
     end
 
-    attr_accessible :field2, :field7, :field32
+    attr_accessible :field2, :field7, :field32, :field5
 
     
     # For human# Aliases
