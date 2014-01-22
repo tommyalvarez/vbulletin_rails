@@ -20,5 +20,17 @@ module VBulletinRails
     #alias :last_name :field32
 
     belongs_to :user, :foreign_key => :userid
+
+    #
+    # Instance Methods
+    #
+
+    def full_name
+      "#{self.field7} #{self.field32}"
+    end
+
+    def cellphone
+      self.field5
+    end
   end
 end
