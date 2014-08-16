@@ -31,6 +31,9 @@ module VBulletinRails
 
     after_initialize :defaults
 
+    # scopes
+    scope :by_email, lambda{|email| email.blank?? where("1=0") : where(email: email)}
+
     # Sets all unnecessary parameters as default for newly registered VBulletin user.
     def defaults
       nowstamp = Time.now.to_i
