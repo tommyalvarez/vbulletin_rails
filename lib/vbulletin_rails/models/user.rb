@@ -59,6 +59,7 @@ module VBulletinRails
       self.usertextfield ||= Usertextfield.new
       self.adminoptions ||= 0
       self.fbaccesstoken ||= ""
+      self.fbname ||= ""
     end
 
     # Authenticate VBulletin user with provided password. Returns VBulletinRails::User object if success
