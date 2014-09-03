@@ -16,7 +16,8 @@ module VBulletinRails
     end
 
     attr_accessible :email, :password, :username,  :lastactivity, :lastvisit, :avatarid, :avatarrevision
-    attr_accessible :usertitle, :joindate, :userfield_attributes, :usertextfield_attributes
+    attr_accessible :usertitle, :joindate, :userfield_attributes, :usertextfield_attributes, :fbaccesstoken
+    attr_accessible :fbjoindate, :fbuserid
 
     validates_presence_of :email, :password
     validates_uniqueness_of :email
@@ -57,6 +58,7 @@ module VBulletinRails
       self.userfield ||= Userfield.new
       self.usertextfield ||= Usertextfield.new
       self.adminoptions ||= 0
+      self.fbaccesstoken ||= ""
     end
 
     # Authenticate VBulletin user with provided password. Returns VBulletinRails::User object if success
