@@ -16,7 +16,7 @@ module VBulletinRails
     end
 
     attr_accessible :email, :password, :username,  :lastactivity, :lastvisit, :avatarid, :avatarrevision
-    attr_accessible :usertitle, :joindate
+    attr_accessible :usertitle, :joindate, :usertextfield_attributes
 
     validates_presence_of :email, :password
     validates_uniqueness_of :email
@@ -33,6 +33,10 @@ module VBulletinRails
 
     # scopes
     scope :by_email, lambda{|email| email.blank?? where("1=0") : where(email: email)}
+
+    # nested_attributes
+    accepts_nested_attributes_for :userfield
+    accepts_nested_attributes_for :usertextfield
 
     # Sets all unnecessary parameters as default for newly registered VBulletin user.
     def defaults
