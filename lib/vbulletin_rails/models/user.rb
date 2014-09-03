@@ -60,6 +60,7 @@ module VBulletinRails
       self.adminoptions ||= 0
       self.fbaccesstoken ||= ""
       self.fbname ||= ""
+      self.infractiongroupid ||= 0
     end
 
     # Authenticate VBulletin user with provided password. Returns VBulletinRails::User object if success
