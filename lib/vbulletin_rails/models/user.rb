@@ -60,6 +60,7 @@ module VBulletinRails
       self.adminoptions ||= 0
       self.fbaccesstoken ||= ""
       self.fbname ||= ""
+      self.infractiongroupid ||= 0
       self.infractiongroupids ||= 0
     end
 
