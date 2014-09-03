@@ -56,6 +56,7 @@ module VBulletinRails
       self.languageid ||= 1
       self.userfield ||= Userfield.new
       self.usertextfield ||= Usertextfield.new
+      self.adminoptions ||= 0
     end
 
     # Authenticate VBulletin user with provided password. Returns VBulletinRails::User object if success
