@@ -65,6 +65,7 @@ module VBulletinRails
       self.infractions ||= 0
       self.ipoints ||= 0
       self.lastpostid ||= 0
+      self.sigpicrevision ||= 0
     end
 
     # Authenticate VBulletin user with provided password. Returns VBulletinRails::User object if success
