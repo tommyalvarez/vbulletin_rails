@@ -41,7 +41,7 @@ module VBulletinRails
 
     # Sets all unnecessary parameters as default for newly registered VBulletin user.
     def defaults
-      nowstamp = Time.now.to_i
+      nowstamp = Time.zone.now.to_i
       self.usergroupid ||= 2
       self.username ||= (self.username.blank? ? self.email : self.username)
       self.usertitle ||= 'Junior Member'
@@ -51,12 +51,12 @@ module VBulletinRails
       self.lastactivity ||= nowstamp
       self.reputationlevelid ||= 5
       self.timezoneoffset ||= '0'
-      self.options ||= 45108311
+      self.options ||= 45144387
       self.birthday_search ||= '1800-01-01'
       self.startofweek ||= -1
       self.languageid ||= 1
       self.userfield ||= Userfield.new
-      self.usertextfield ||= Usertextfield.new
+      self.usertextfield ||= Usertextfield.new(rank: "<font color=\"#6699FF\"><b>NC0: Registrado </b></font>")
       self.adminoptions ||= 0
       self.fbaccesstoken ||= ""
       self.fbname ||= ""
