@@ -11,13 +11,16 @@ module VBulletinRails
       set_table_name(PREFIX + 'userfield')
     end
 
-    attr_accessible :field2, :field7, :field32, :field5
+    attr_accessible :field2, :field7, :field32, :field5, :field19, :field23, :field2
 
     
     # For human# Aliases
     #alias :location :field2
     #alias :first_name :field7
     #alias :last_name :field32
+    #alias :country, :field19
+    #alias :state, :field23
+    #alias :localization, :field2
 
     belongs_to :user, :foreign_key => :userid
 
