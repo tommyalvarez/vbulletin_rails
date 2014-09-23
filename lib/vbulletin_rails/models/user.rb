@@ -45,7 +45,7 @@ module VBulletinRails
       self.usergroupid ||= 2
       self.username ||= (self.username.blank? ? self.email : self.username)
       self.usertitle ||= 'Junior Member'
-      self.joindate ||= nowstamp
+      self.joindate = nowstamp
       self.daysprune ||= -1
       self.lastvisit ||= nowstamp
       self.lastactivity ||= nowstamp
