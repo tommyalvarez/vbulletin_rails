@@ -11,6 +11,8 @@ module VBulletinRails
       set_table_name(PREFIX + 'usertextfield')
     end
 
+    attr_accessible :rank
+
     belongs_to :user, :foreign_key => :userid
   end
 end
