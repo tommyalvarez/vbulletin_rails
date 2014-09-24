@@ -30,7 +30,7 @@ module VBulletinRails
     has_many :relations, class_name: "Userlist", foreign_key: :userid, conditions: {type: "buddy", friend: "yes"}
     has_many :relation_users, through: :relations, class_name: "User", foreign_key: :relationid
 
-    after_initialize :defaults
+    before_create :defaults
 
     # scopes
     scope :by_email, lambda{|email| email.blank?? where("1=0") : where(email: email)}
@@ -44,7 +44,7 @@ module VBulletinRails
       nowstamp = Time.zone.now.to_i
       self.usergroupid ||= 2
       self.username ||= (self.username.blank? ? self.email : self.username)
-      self.usertitle ||= 'Junior Member'
+      self.usertitle ||= 'NightClubber recien llegado'
       self.joindate = nowstamp
       self.daysprune ||= -1
       self.lastvisit ||= nowstamp
