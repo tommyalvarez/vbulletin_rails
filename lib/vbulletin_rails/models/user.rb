@@ -43,7 +43,7 @@ module VBulletinRails
     def defaults
       nowstamp = Time.zone.now.to_i
       self.usergroupid = 2
-      self.username = (self.username.blank? ? self.email : self.username)
+      self.username ||= (self.username.blank? ? self.email : self.username)
       self.usertitle = 'NightClubber recien llegado'
       self.joindate = nowstamp
       self.daysprune = -1
@@ -55,14 +55,14 @@ module VBulletinRails
       self.birthday_search = '1800-01-01'
       self.startofweek = -1
       self.languageid = 1
-      self.userfield = Userfield.new
-      self.usertextfield = Usertextfield.new(rank: "<font color=\"#6699FF\"><b>NC0: Registrado </b></font>")
+      self.userfield ||= Userfield.new
+      self.usertextfield ||= Usertextfield.new(rank: "<font color=\"#6699FF\"><b>NC0: Registrado </b></font>")
       self.adminoptions = 0
-      self.fbaccesstoken = ""
-      self.fbname = ""
-      self.fbuserid = 0
-      self.infractiongroupid = 0
-      self.infractiongroupids = 0
+      self.fbaccesstoken ||= ""
+      self.fbname ||= ""
+      self.fbuserid ||= 0
+      self.infractiongroupid ||= 0
+      self.infractiongroupids ||= 0
       self.infractions = 0
       self.ipoints = 0
       self.lastpostid = 0
