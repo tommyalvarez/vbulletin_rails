@@ -42,32 +42,32 @@ module VBulletinRails
     # Sets all unnecessary parameters as default for newly registered VBulletin user.
     def defaults
       nowstamp = Time.zone.now.to_i
-      self.usergroupid ||= 2
-      self.username ||= (self.username.blank? ? self.email : self.username)
-      self.usertitle ||= 'NightClubber recien llegado'
+      self.usergroupid = 2
+      self.username = (self.username.blank? ? self.email : self.username)
+      self.usertitle = 'NightClubber recien llegado'
       self.joindate = nowstamp
-      self.daysprune ||= -1
-      self.lastvisit ||= nowstamp
-      self.lastactivity ||= nowstamp
-      self.reputationlevelid ||= 5
-      self.timezoneoffset ||= '0'
-      self.options ||= 45144387
-      self.birthday_search ||= '1800-01-01'
-      self.startofweek ||= -1
-      self.languageid ||= 1
-      self.userfield ||= Userfield.new
-      self.usertextfield ||= Usertextfield.new(rank: "<font color=\"#6699FF\"><b>NC0: Registrado </b></font>")
-      self.adminoptions ||= 0
-      self.fbaccesstoken ||= ""
-      self.fbname ||= ""
-      self.fbuserid ||= 0
-      self.infractiongroupid ||= 0
-      self.infractiongroupids ||= 0
-      self.infractions ||= 0
-      self.ipoints ||= 0
-      self.lastpostid ||= 0
-      self.sigpicrevision ||= 0
-      self.warnings ||= 0
+      self.daysprune = -1
+      self.lastvisit = nowstamp
+      self.lastactivity = nowstamp
+      self.reputationlevelid = 5
+      self.timezoneoffset = '0'
+      self.options = 45144387
+      self.birthday_search = '1800-01-01'
+      self.startofweek = -1
+      self.languageid = 1
+      self.userfield = Userfield.new
+      self.usertextfield = Usertextfield.new(rank: "<font color=\"#6699FF\"><b>NC0: Registrado </b></font>")
+      self.adminoptions = 0
+      self.fbaccesstoken = ""
+      self.fbname = ""
+      self.fbuserid = 0
+      self.infractiongroupid = 0
+      self.infractiongroupids = 0
+      self.infractions = 0
+      self.ipoints = 0
+      self.lastpostid = 0
+      self.sigpicrevision = 0
+      self.warnings = 0
     end
 
     # Authenticate VBulletin user with provided password. Returns VBulletinRails::User object if success
