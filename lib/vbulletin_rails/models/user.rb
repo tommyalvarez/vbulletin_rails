@@ -17,7 +17,7 @@ module VBulletinRails
 
     attr_accessible :email, :password, :username,  :lastactivity, :lastvisit, :avatarid, :avatarrevision
     attr_accessible :usertitle, :joindate, :userfield_attributes, :usertextfield_attributes, :fbaccesstoken
-    attr_accessible :fbjoindate, :fbuserid, :fbname
+    attr_accessible :fbjoindate, :fbuserid, :fbname, :usergroupid
 
     validates_presence_of :email, :password
     validates_uniqueness_of :email
